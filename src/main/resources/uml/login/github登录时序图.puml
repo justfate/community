@@ -1,0 +1,23 @@
+@startuml
+hide footbox
+actor 用户
+participant J社区
+participant Github
+
+用户 -> J社区: 1:访问
+activate 用户
+activate J社区
+J社区 -> J社区: 1.1:登录
+J社区 -> Github: 1.2:auhorize
+activate Github
+Github -> J社区: 回调redirect-uri，携带code
+J社区 -> Github: 1.2.1.1 调用access_token API，携带code
+Github --> J社区: 1.2.1.2 返回access_token
+J社区 -> Github: 1.2.1.3 调用user API携带access_token
+Github --> J社区: 1.2.1.4 返回user信息
+J社区 -> J社区: 1.2.1.5 保存数据，更新登录状态
+J社区 --> 用户: 1.2.1.6 登陆成功
+deactivate Github
+deactivate J社区
+deactivate 用户
+@enduml
