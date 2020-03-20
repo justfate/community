@@ -23,8 +23,7 @@ create table USER
 	TOKEN VARCHAR(36),
 	GMT_CREATE BIGINT,
 	GMT_MODIFIED BIGINT,
-	constraint USER_PK
-		primary key (ID)
+	constraint USER_PK primary key (ID)
 );
 ```
 
