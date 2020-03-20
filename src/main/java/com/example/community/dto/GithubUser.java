@@ -36,4 +36,5 @@ public class GithubUser {
     public void setDio(String dio) {
         this.dio = dio;
     }
+
 }

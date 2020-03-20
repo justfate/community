@@ -1,0 +1,12 @@
+@startuml
+
+class Database
+
+class Table
+
+class Recode
+
+Table *-- Database
+
+Recode *-- Table
+@enduml
