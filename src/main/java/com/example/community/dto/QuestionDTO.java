@@ -1,14 +1,16 @@
-package com.example.community.model;
+package com.example.community.dto;
+
+import com.example.community.model.User;
 
 /**
  * @Project: community
- * @ClassName: Question
+ * @ClassName: QuestionDTO
  * @Company: JIT Northeast R & D
  * @Description:
  * @author: zheng_wang
- * @date: 2020年03月23日
+ * @date: 2020年03月24日
  */
-public class Question {
+public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
@@ -19,6 +21,7 @@ public class Question {
     private Integer commentCount;
     private Integer viewCount;
     private Integer likeCount;
+    private User user;
 
     public Integer getId() {
         return id;
@@ -100,19 +103,11 @@ public class Question {
         this.likeCount = likeCount;
     }
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", gmtCreate=" + gmtCreate +
-                ", gmtModified=" + gmtModified +
-                ", creator=" + creator +
-                ", tag='" + tag + '\'' +
-                ", commentCount=" + commentCount +
-                ", viewCount=" + viewCount +
-                ", likeCount=" + likeCount +
-                '}';
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
